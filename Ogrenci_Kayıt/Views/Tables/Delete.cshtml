@@ -1,0 +1,64 @@
+﻿@model Ogrenci_Kayıt.Models.Table
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Ogrenci Silme</h2>
+
+<h3>Gercekten Silmek  İstiyormusunuz?</h3>
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrSoyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrSoyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrFotograf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrFotograf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrAdres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrAdres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OgrMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OgrMail)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-danger" /> |
+            @Html.ActionLink("Ogrenci Listesine Git", "Index")
+        </div>
+     }
+</div>

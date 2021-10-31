@@ -1,0 +1,79 @@
+﻿@model Ogrenci_Kayıt.Models.Table
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h4>Düzenle</h4>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+   
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.OgrId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrAd, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrAd, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrAd, new { @class = "form- control", Placeholder = "Adınızı Yazın", Required = "" })
+                @Html.ValidationMessageFor(model => model.OgrAd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrSoyad, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrSoyad, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrSoyad, new { @class = "form- control", Placeholder = "Soyadınızı Yazın", Required = "" })
+                @Html.ValidationMessageFor(model => model.OgrSoyad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrFotograf, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrFotograf, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrFotograf, new { @class = "form- control", Placeholder = "Fotograf Link  Yazın"})
+                @Html.ValidationMessageFor(model => model.OgrFotograf, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrAdres, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrAdres, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrAdres, new { @class = "form- control", Placeholder = "Adınızı Yazın", Required = "" })
+                @Html.ValidationMessageFor(model => model.OgrAdres, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OgrMail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @*@Html.EditorFor(model => model.OgrMail, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.TextBoxFor(model => model.OgrMail, new { @class = "form- control", Placeholder = "Mailinizi Yazın", Required = "" })
+                @Html.ValidationMessageFor(model => model.OgrMail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Güncelle" class="btn btn-warning" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Ögrenci Listesine Git", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
